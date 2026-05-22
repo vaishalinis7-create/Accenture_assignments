@@ -1,0 +1,857 @@
+use ecommerceDB
+switched to db ecommerceDB
+show collections
+products
+db.products.insertMany([
+  {
+    name:"iPhone 14",
+    category:"Electronics",
+    price:75000,
+    stock:25,
+    brand:"Apple"
+  },
+  {
+    name:"Samsung Galaxy S25",
+    category:"Electornics",
+    price:65000,
+    stock:30,
+    brand:"Samsung"
+  },
+  {
+    name:"Dell Laptop",
+    category:"Computers",
+    price:55000,
+    stock:15,
+    brand:"Dell"
+  },
+  {
+    name:"HP Pavillon Laptop",
+    category:"Computes",
+    price:50000,
+    stock:12,
+    brand:"HP"
+  },
+  {
+    name:"Nike Shoes",
+    category:"Fashion",
+    price:5000,
+    stock:50,
+    brand:"Nike"
+  },
+  {
+    name:"Adidas T-shirt",
+    category:"Fashion",
+    price:1500,
+    stock:80,
+    brand:"Adidas"
+  },
+  {
+    name:"Sony Headphones",
+    category:"Electronics",
+    price:3000,
+    stock:40,
+    brand:"Sony"
+  },
+  {
+    name:"Wooden Dining Table",
+    category:"Furniture",
+    price:20000,
+    stock:5,
+    brand:"IKEA"
+  },
+  {
+    name:"Office Chair",
+    category:"Furniture",
+    price:7000,
+    stock:20,
+    brand:"Godrej"
+  },
+  {
+    name:"Bluetooth Speaker",
+    category:"Electronics",
+    price:2500,
+    stock:60,
+    brand:"JBL"
+  }
+])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('6a1005d71e6c74b25a41631c'),
+    '1': ObjectId('6a1005d71e6c74b25a41631d'),
+    '2': ObjectId('6a1005d71e6c74b25a41631e'),
+    '3': ObjectId('6a1005d71e6c74b25a41631f'),
+    '4': ObjectId('6a1005d71e6c74b25a416320'),
+    '5': ObjectId('6a1005d71e6c74b25a416321'),
+    '6': ObjectId('6a1005d71e6c74b25a416322'),
+    '7': ObjectId('6a1005d71e6c74b25a416323'),
+    '8': ObjectId('6a1005d71e6c74b25a416324'),
+    '9': ObjectId('6a1005d71e6c74b25a416325')
+  }
+}
+db.products.find()
+{
+  _id: ObjectId('6a1005d71e6c74b25a41631c'),
+  name: 'iPhone 14',
+  category: 'Electronics',
+  price: 75000,
+  stock: 25,
+  brand: 'Apple'
+}
+{
+  _id: ObjectId('6a1005d71e6c74b25a41631d'),
+  name: 'Samsung Galaxy S25',
+  category: 'Electornics',
+  price: 65000,
+  stock: 30,
+  brand: 'Samsung'
+}
+{
+  _id: ObjectId('6a1005d71e6c74b25a41631e'),
+  name: 'Dell Laptop',
+  category: 'Computers',
+  price: 55000,
+  stock: 15,
+  brand: 'Dell'
+}
+{
+  _id: ObjectId('6a1005d71e6c74b25a41631f'),
+  name: 'HP Pavillon Laptop',
+  category: 'Computes',
+  price: 50000,
+  stock: 12,
+  brand: 'HP'
+}
+{
+  _id: ObjectId('6a1005d71e6c74b25a416320'),
+  name: 'Nike Shoes',
+  category: 'Fashion',
+  price: 5000,
+  stock: 50,
+  brand: 'Nike'
+}
+{
+  _id: ObjectId('6a1005d71e6c74b25a416321'),
+  name: 'Adidas T-shirt',
+  category: 'Fashion',
+  price: 1500,
+  stock: 80,
+  brand: 'Adidas'
+}
+{
+  _id: ObjectId('6a1005d71e6c74b25a416322'),
+  name: 'Sony Headphones',
+  category: 'Electronics',
+  price: 3000,
+  stock: 40,
+  brand: 'Sony'
+}
+{
+  _id: ObjectId('6a1005d71e6c74b25a416323'),
+  name: 'Wooden Dining Table',
+  category: 'Furniture',
+  price: 20000,
+  stock: 5,
+  brand: 'IKEA'
+}
+{
+  _id: ObjectId('6a1005d71e6c74b25a416324'),
+  name: 'Office Chair',
+  category: 'Furniture',
+  price: 7000,
+  stock: 20,
+  brand: 'Godrej'
+}
+{
+  _id: ObjectId('6a1005d71e6c74b25a416325'),
+  name: 'Bluetooth Speaker',
+  category: 'Electronics',
+  price: 2500,
+  stock: 60,
+  brand: 'JBL'
+}
+db.products.find().pretty()
+{
+  _id: ObjectId('6a1005d71e6c74b25a41631c'),
+  name: 'iPhone 14',
+  category: 'Electronics',
+  price: 75000,
+  stock: 25,
+  brand: 'Apple'
+}
+{
+  _id: ObjectId('6a1005d71e6c74b25a41631d'),
+  name: 'Samsung Galaxy S25',
+  category: 'Electornics',
+  price: 65000,
+  stock: 30,
+  brand: 'Samsung'
+}
+{
+  _id: ObjectId('6a1005d71e6c74b25a41631e'),
+  name: 'Dell Laptop',
+  category: 'Computers',
+  price: 55000,
+  stock: 15,
+  brand: 'Dell'
+}
+{
+  _id: ObjectId('6a1005d71e6c74b25a41631f'),
+  name: 'HP Pavillon Laptop',
+  category: 'Computes',
+  price: 50000,
+  stock: 12,
+  brand: 'HP'
+}
+{
+  _id: ObjectId('6a1005d71e6c74b25a416320'),
+  name: 'Nike Shoes',
+  category: 'Fashion',
+  price: 5000,
+  stock: 50,
+  brand: 'Nike'
+}
+{
+  _id: ObjectId('6a1005d71e6c74b25a416321'),
+  name: 'Adidas T-shirt',
+  category: 'Fashion',
+  price: 1500,
+  stock: 80,
+  brand: 'Adidas'
+}
+{
+  _id: ObjectId('6a1005d71e6c74b25a416322'),
+  name: 'Sony Headphones',
+  category: 'Electronics',
+  price: 3000,
+  stock: 40,
+  brand: 'Sony'
+}
+{
+  _id: ObjectId('6a1005d71e6c74b25a416323'),
+  name: 'Wooden Dining Table',
+  category: 'Furniture',
+  price: 20000,
+  stock: 5,
+  brand: 'IKEA'
+}
+{
+  _id: ObjectId('6a1005d71e6c74b25a416324'),
+  name: 'Office Chair',
+  category: 'Furniture',
+  price: 7000,
+  stock: 20,
+  brand: 'Godrej'
+}
+{
+  _id: ObjectId('6a1005d71e6c74b25a416325'),
+  name: 'Bluetooth Speaker',
+  category: 'Electronics',
+  price: 2500,
+  stock: 60,
+  brand: 'JBL'
+}
+db.products.find({name:"iPhone 14"})
+{
+  _id: ObjectId('6a1005d71e6c74b25a41631c'),
+  name: 'iPhone 14',
+  category: 'Electronics',
+  price: 75000,
+  stock: 25,
+  brand: 'Apple'
+}
+db.products.find({category:"Electonics"})
+db.products.find({category:"Electronics"})
+{
+  _id: ObjectId('6a1005d71e6c74b25a41631c'),
+  name: 'iPhone 14',
+  category: 'Electronics',
+  price: 75000,
+  stock: 25,
+  brand: 'Apple'
+}
+{
+  _id: ObjectId('6a1005d71e6c74b25a41631d'),
+  name: 'Samsung Galaxy S25',
+  category: 'Electronics',
+  price: 65000,
+  stock: 30,
+  brand: 'Samsung'
+}
+{
+  _id: ObjectId('6a1005d71e6c74b25a416322'),
+  name: 'Sony Headphones',
+  category: 'Electronics',
+  price: 3000,
+  stock: 40,
+  brand: 'Sony'
+}
+{
+  _id: ObjectId('6a1005d71e6c74b25a416325'),
+  name: 'Bluetooth Speaker',
+  category: 'Electronics',
+  price: 2500,
+  stock: 60,
+  brand: 'JBL'
+}
+db.products.find({price:{$lt:5000}})
+{
+  _id: ObjectId('6a1005d71e6c74b25a416321'),
+  name: 'Adidas T-shirt',
+  category: 'Fashion',
+  price: 1500,
+  stock: 80,
+  brand: 'Adidas'
+}
+{
+  _id: ObjectId('6a1005d71e6c74b25a416322'),
+  name: 'Sony Headphones',
+  category: 'Electronics',
+  price: 3000,
+  stock: 40,
+  brand: 'Sony'
+}
+{
+  _id: ObjectId('6a1005d71e6c74b25a416325'),
+  name: 'Bluetooth Speaker',
+  category: 'Electronics',
+  price: 2500,
+  stock: 60,
+  brand: 'JBL'
+}
+db.products.find({price:{$lte:5000}})
+{
+  _id: ObjectId('6a1005d71e6c74b25a416320'),
+  name: 'Nike Shoes',
+  category: 'Fashion',
+  price: 5000,
+  stock: 50,
+  brand: 'Nike'
+}
+{
+  _id: ObjectId('6a1005d71e6c74b25a416321'),
+  name: 'Adidas T-shirt',
+  category: 'Fashion',
+  price: 1500,
+  stock: 80,
+  brand: 'Adidas'
+}
+{
+  _id: ObjectId('6a1005d71e6c74b25a416322'),
+  name: 'Sony Headphones',
+  category: 'Electronics',
+  price: 3000,
+  stock: 40,
+  brand: 'Sony'
+}
+{
+  _id: ObjectId('6a1005d71e6c74b25a416325'),
+  name: 'Bluetooth Speaker',
+  category: 'Electronics',
+  price: 2500,
+  stock: 60,
+  brand: 'JBL'
+}
+db.products.find({price:{$gt:5000}})
+{
+  _id: ObjectId('6a1005d71e6c74b25a41631c'),
+  name: 'iPhone 14',
+  category: 'Electronics',
+  price: 75000,
+  stock: 25,
+  brand: 'Apple'
+}
+{
+  _id: ObjectId('6a1005d71e6c74b25a41631d'),
+  name: 'Samsung Galaxy S25',
+  category: 'Electronics',
+  price: 65000,
+  stock: 30,
+  brand: 'Samsung'
+}
+{
+  _id: ObjectId('6a1005d71e6c74b25a41631e'),
+  name: 'Dell Laptop',
+  category: 'Computers',
+  price: 55000,
+  stock: 15,
+  brand: 'Dell'
+}
+{
+  _id: ObjectId('6a1005d71e6c74b25a41631f'),
+  name: 'HP Pavillon Laptop',
+  category: 'Computers',
+  price: 50000,
+  stock: 12,
+  brand: 'HP'
+}
+{
+  _id: ObjectId('6a1005d71e6c74b25a416323'),
+  name: 'Wooden Dining Table',
+  category: 'Furniture',
+  price: 20000,
+  stock: 5,
+  brand: 'IKEA'
+}
+{
+  _id: ObjectId('6a1005d71e6c74b25a416324'),
+  name: 'Office Chair',
+  category: 'Furniture',
+  price: 7000,
+  stock: 20,
+  brand: 'Godrej'
+}
+db.products.find({price:{$gte:5000}})
+{
+  _id: ObjectId('6a1005d71e6c74b25a41631c'),
+  name: 'iPhone 14',
+  category: 'Electronics',
+  price: 75000,
+  stock: 25,
+  brand: 'Apple'
+}
+{
+  _id: ObjectId('6a1005d71e6c74b25a41631d'),
+  name: 'Samsung Galaxy S25',
+  category: 'Electronics',
+  price: 65000,
+  stock: 30,
+  brand: 'Samsung'
+}
+{
+  _id: ObjectId('6a1005d71e6c74b25a41631e'),
+  name: 'Dell Laptop',
+  category: 'Computers',
+  price: 55000,
+  stock: 15,
+  brand: 'Dell'
+}
+{
+  _id: ObjectId('6a1005d71e6c74b25a41631f'),
+  name: 'HP Pavillon Laptop',
+  category: 'Computers',
+  price: 50000,
+  stock: 12,
+  brand: 'HP'
+}
+{
+  _id: ObjectId('6a1005d71e6c74b25a416320'),
+  name: 'Nike Shoes',
+  category: 'Fashion',
+  price: 5000,
+  stock: 50,
+  brand: 'Nike'
+}
+{
+  _id: ObjectId('6a1005d71e6c74b25a416323'),
+  name: 'Wooden Dining Table',
+  category: 'Furniture',
+  price: 20000,
+  stock: 5,
+  brand: 'IKEA'
+}
+{
+  _id: ObjectId('6a1005d71e6c74b25a416324'),
+  name: 'Office Chair',
+  category: 'Furniture',
+  price: 7000,
+  stock: 20,
+  brand: 'Godrej'
+}
+db.products.find({price:{$ne:5000}})
+{
+  _id: ObjectId('6a1005d71e6c74b25a41631c'),
+  name: 'iPhone 14',
+  category: 'Electronics',
+  price: 75000,
+  stock: 25,
+  brand: 'Apple'
+}
+{
+  _id: ObjectId('6a1005d71e6c74b25a41631d'),
+  name: 'Samsung Galaxy S25',
+  category: 'Electronics',
+  price: 65000,
+  stock: 30,
+  brand: 'Samsung'
+}
+{
+  _id: ObjectId('6a1005d71e6c74b25a41631e'),
+  name: 'Dell Laptop',
+  category: 'Computers',
+  price: 55000,
+  stock: 15,
+  brand: 'Dell'
+}
+{
+  _id: ObjectId('6a1005d71e6c74b25a41631f'),
+  name: 'HP Pavillon Laptop',
+  category: 'Computers',
+  price: 50000,
+  stock: 12,
+  brand: 'HP'
+}
+{
+  _id: ObjectId('6a1005d71e6c74b25a416321'),
+  name: 'Adidas T-shirt',
+  category: 'Fashion',
+  price: 1500,
+  stock: 80,
+  brand: 'Adidas'
+}
+{
+  _id: ObjectId('6a1005d71e6c74b25a416322'),
+  name: 'Sony Headphones',
+  category: 'Electronics',
+  price: 3000,
+  stock: 40,
+  brand: 'Sony'
+}
+{
+  _id: ObjectId('6a1005d71e6c74b25a416323'),
+  name: 'Wooden Dining Table',
+  category: 'Furniture',
+  price: 20000,
+  stock: 5,
+  brand: 'IKEA'
+}
+{
+  _id: ObjectId('6a1005d71e6c74b25a416324'),
+  name: 'Office Chair',
+  category: 'Furniture',
+  price: 7000,
+  stock: 20,
+  brand: 'Godrej'
+}
+{
+  _id: ObjectId('6a1005d71e6c74b25a416325'),
+  name: 'Bluetooth Speaker',
+  category: 'Electronics',
+  price: 2500,
+  stock: 60,
+  brand: 'JBL'
+}
+db.products.find({price:{$in:[1000,2000,5000}})
+SyntaxError: Unexpected token, expected "," (1:44)
+
+> 1 | db.products.find({price:{$in:[1000,2000,5000}})
+    |                                             ^
+db.products.find({price:{$in:[1000,2000,5000]}})
+{
+  _id: ObjectId('6a1005d71e6c74b25a416320'),
+  name: 'Nike Shoes',
+  category: 'Fashion',
+  price: 5000,
+  stock: 50,
+  brand: 'Nike'
+}
+db.products.find({price:{$nin:[1000,2000,5000]}})
+{
+  _id: ObjectId('6a1005d71e6c74b25a41631c'),
+  name: 'iPhone 14',
+  category: 'Electronics',
+  price: 75000,
+  stock: 25,
+  brand: 'Apple'
+}
+{
+  _id: ObjectId('6a1005d71e6c74b25a41631d'),
+  name: 'Samsung Galaxy S25',
+  category: 'Electronics',
+  price: 65000,
+  stock: 30,
+  brand: 'Samsung'
+}
+{
+  _id: ObjectId('6a1005d71e6c74b25a41631e'),
+  name: 'Dell Laptop',
+  category: 'Computers',
+  price: 55000,
+  stock: 15,
+  brand: 'Dell'
+}
+{
+  _id: ObjectId('6a1005d71e6c74b25a41631f'),
+  name: 'HP Pavillon Laptop',
+  category: 'Computers',
+  price: 50000,
+  stock: 12,
+  brand: 'HP'
+}
+{
+  _id: ObjectId('6a1005d71e6c74b25a416321'),
+  name: 'Adidas T-shirt',
+  category: 'Fashion',
+  price: 1500,
+  stock: 80,
+  brand: 'Adidas'
+}
+{
+  _id: ObjectId('6a1005d71e6c74b25a416322'),
+  name: 'Sony Headphones',
+  category: 'Electronics',
+  price: 3000,
+  stock: 40,
+  brand: 'Sony'
+}
+{
+  _id: ObjectId('6a1005d71e6c74b25a416323'),
+  name: 'Wooden Dining Table',
+  category: 'Furniture',
+  price: 20000,
+  stock: 5,
+  brand: 'IKEA'
+}
+{
+  _id: ObjectId('6a1005d71e6c74b25a416324'),
+  name: 'Office Chair',
+  category: 'Furniture',
+  price: 7000,
+  stock: 20,
+  brand: 'Godrej'
+}
+{
+  _id: ObjectId('6a1005d71e6c74b25a416325'),
+  name: 'Bluetooth Speaker',
+  category: 'Electronics',
+  price: 2500,
+  stock: 60,
+  brand: 'JBL'
+}
+db.products.find({$and:[{category:"Electronics"},{price:5000}]})
+db.products.find({$and:[{category:"Electronics"},{price:5000}]})
+db.products.find({$and:[{category:"Electronics"},{price:5000}]})
+db.products.find({$and:[{category:"Electronics"},{price:5000}]})
+db.products.find({$and:[{category:"Electronics"},{price:2500}]})
+{
+  _id: ObjectId('6a1005d71e6c74b25a416325'),
+  name: 'Bluetooth Speaker',
+  category: 'Electronics',
+  price: 2500,
+  stock: 60,
+  brand: 'JBL'
+}
+db.products.find({$or:[{category:"Electronics"},{brand:"Apple"}]})
+{
+  _id: ObjectId('6a1005d71e6c74b25a41631c'),
+  name: 'iPhone 14',
+  category: 'Electronics',
+  price: 75000,
+  stock: 25,
+  brand: 'Apple'
+}
+{
+  _id: ObjectId('6a1005d71e6c74b25a41631d'),
+  name: 'Samsung Galaxy S25',
+  category: 'Electronics',
+  price: 65000,
+  stock: 30,
+  brand: 'Samsung'
+}
+{
+  _id: ObjectId('6a1005d71e6c74b25a416322'),
+  name: 'Sony Headphones',
+  category: 'Electronics',
+  price: 3000,
+  stock: 40,
+  brand: 'Sony'
+}
+{
+  _id: ObjectId('6a1005d71e6c74b25a416325'),
+  name: 'Bluetooth Speaker',
+  category: 'Electronics',
+  price: 2500,
+  stock: 60,
+  brand: 'JBL'
+}
+db.products.find({$or:[{price:{$gt:5000}},{brand:"Samsung"}]})
+{
+  _id: ObjectId('6a1005d71e6c74b25a41631c'),
+  name: 'iPhone 14',
+  category: 'Electronics',
+  price: 75000,
+  stock: 25,
+  brand: 'Apple'
+}
+{
+  _id: ObjectId('6a1005d71e6c74b25a41631d'),
+  name: 'Samsung Galaxy S25',
+  category: 'Electronics',
+  price: 65000,
+  stock: 30,
+  brand: 'Samsung'
+}
+{
+  _id: ObjectId('6a1005d71e6c74b25a41631e'),
+  name: 'Dell Laptop',
+  category: 'Computers',
+  price: 55000,
+  stock: 15,
+  brand: 'Dell'
+}
+{
+  _id: ObjectId('6a1005d71e6c74b25a41631f'),
+  name: 'HP Pavillon Laptop',
+  category: 'Computers',
+  price: 50000,
+  stock: 12,
+  brand: 'HP'
+}
+{
+  _id: ObjectId('6a1005d71e6c74b25a416323'),
+  name: 'Wooden Dining Table',
+  category: 'Furniture',
+  price: 20000,
+  stock: 5,
+  brand: 'IKEA'
+}
+{
+  _id: ObjectId('6a1005d71e6c74b25a416324'),
+  name: 'Office Chair',
+  category: 'Furniture',
+  price: 7000,
+  stock: 20,
+  brand: 'Godrej'
+}
+db.products.find({$and:[{price:{$gt:5000}},{price:{$lt:20000}}]})
+{
+  _id: ObjectId('6a1005d71e6c74b25a416324'),
+  name: 'Office Chair',
+  category: 'Furniture',
+  price: 7000,
+  stock: 20,
+  brand: 'Godrej'
+}
+db.products.find({price:{$not:{$gt:5000}}})
+{
+  _id: ObjectId('6a1005d71e6c74b25a416320'),
+  name: 'Nike Shoes',
+  category: 'Fashion',
+  price: 5000,
+  stock: 50,
+  brand: 'Nike'
+}
+{
+  _id: ObjectId('6a1005d71e6c74b25a416321'),
+  name: 'Adidas T-shirt',
+  category: 'Fashion',
+  price: 1500,
+  stock: 80,
+  brand: 'Adidas'
+}
+{
+  _id: ObjectId('6a1005d71e6c74b25a416322'),
+  name: 'Sony Headphones',
+  category: 'Electronics',
+  price: 3000,
+  stock: 40,
+  brand: 'Sony'
+}
+{
+  _id: ObjectId('6a1005d71e6c74b25a416325'),
+  name: 'Bluetooth Speaker',
+  category: 'Electronics',
+  price: 2500,
+  stock: 60,
+  brand: 'JBL'
+}
+db.products.updateOne(
+    { _id: ObjectId("6a0fe88451e9f471a979f2b8") },{$set: { name: "iPhone 14 Pro" }})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 0,
+  modifiedCount: 0,
+  upsertedCount: 0
+}
+db.products.updateMany({ price: { $lt: 5000 } },{$set: { stock: 100 }  })
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 3,
+  modifiedCount: 3,
+  upsertedCount: 0
+}
+db.products.replaceOne({ name: "Office Chair" },{name: "Gaming Chair",category: "Furniture",price: 12000,stock: 10,brand: "GreenSoul"})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+db.products.deleteOne({
+    name: "Nike Shoes"
+SyntaxError: Unexpected token, expected "," (2:22)
+
+  1 | db.products.deleteOne({
+> 2 |     name: "Nike Shoes"
+    |                       ^
+db.products.deleteOne({
+    name: "Nike Shoes"
+})
+{
+  acknowledged: true,
+  deletedCount: 1
+}
+db.products.deleteMany({})
+{
+  acknowledged: true,
+  deletedCount: 9
+}
+db.products.insertMany([
+{
+    name: "iPhone 14",
+    category: "Electronics",
+    price: 75000,
+    stock: 25,
+    brand: "Apple"
+},
+{
+    name: "Samsung Galaxy S22",
+    category: "Electronics",
+    price: 65000,
+    stock: 30,
+    brand: "Samsung"
+},
+{
+    name: "Dell Laptop",
+    category: "Computers",
+    price: 55000,
+    stock: 15,
+    brand: "Dell"
+}
+])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('6a10261b1e6c74b25a416326'),
+    '1': ObjectId('6a10261b1e6c74b25a416327'),
+    '2': ObjectId('6a10261b1e6c74b25a416328')
+  }
+}
+db.products.find( {},{ name: 1, price: 1 })
+{
+  _id: ObjectId('6a10261b1e6c74b25a416326'),
+  name: 'iPhone 14',
+  price: 75000
+}
+{
+  _id: ObjectId('6a10261b1e6c74b25a416327'),
+  name: 'Samsung Galaxy S22',
+  price: 65000
+}
+{
+  _id: ObjectId('6a10261b1e6c74b25a416328'),
+  name: 'Dell Laptop',
+  price: 55000
+}
+db.products.find().limit(2)
+{
+  _id: ObjectId('6a10261b1e6c74b25a416326'),
+  name: 'iPhone 14',
+  category: 'Electronics',
+  price: 75000,
+  stock: 25,
+  brand: 'Apple'
+}
