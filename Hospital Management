@@ -1,0 +1,392 @@
+db.createCollection("patients")
+
+db.patients.insertMany([
+{patientName:"Arun",doctor:"Dr. Ravi",department:"Cardiology",age:45,treatmentCost:20000,daysAdmitted:5},
+{patientName:"Meena",doctor:"Dr. Kumar",department:"Neurology",age:50,treatmentCost:30000,daysAdmitted:7},
+{patientName:"Raj",doctor:"Dr. Ravi",department:"Cardiology",age:60,treatmentCost:15000,daysAdmitted:3},
+{patientName:"Divya",doctor:"Dr. Mehta",department:"Orthopedics",age:35,treatmentCost:10000,daysAdmitted:2},
+{patientName:"Kiran",doctor:"Dr. Kumar",department:"Neurology",age:40,treatmentCost:25000,daysAdmitted:6},
+{patientName:"Sneha",doctor:"Dr. Mehta",department:"Orthopedics",age:30,treatmentCost:8000,daysAdmitted:2},
+{patientName:"Vijay",doctor:"Dr. Ravi",department:"Cardiology",age:55,treatmentCost:22000,daysAdmitted:4},
+{patientName:"Priya",doctor:"Dr. Kumar",department:"Neurology",age:48,treatmentCost:27000,daysAdmitted:5},
+{patientName:"Anil",doctor:"Dr. Mehta",department:"Orthopedics",age:52,treatmentCost:12000,daysAdmitted:3},
+{patientName:"Riya",doctor:"Dr. Ravi",department:"Cardiology",age:29,treatmentCost:18000,daysAdmitted:4}
+])
+
+db.patients.aggregate([{$match:{treatmentCost:{$gt:20000}}},{$project:{patientName:1,department:1,_id:0}}])
+{
+  patientName: 'Meena',
+  department: 'Neurology'
+}
+{
+  patientName: 'Kiran',
+  department: 'Neurology'
+}
+{
+  patientName: 'Vijay',
+  department: 'Cardiology'
+}
+{
+  patientName: 'Priya',
+  department: 'Neurology'
+}
+
+
+db.patients.aggregate([{ $sort: { treatmentCost: -1 } }])
+{
+  _id: ObjectId('6a12de6dffe9eff619f356b4'),
+  patientName: 'Meena',
+  doctor: 'Dr. Kumar',
+  department: 'Neurology',
+  age: 50,
+  treatmentCost: 30000,
+  daysAdmitted: 7
+}
+{
+  _id: ObjectId('6a12de6dffe9eff619f356ba'),
+  patientName: 'Priya',
+  doctor: 'Dr. Kumar',
+  department: 'Neurology',
+  age: 48,
+  treatmentCost: 27000,
+  daysAdmitted: 5
+}
+{
+  _id: ObjectId('6a12de6dffe9eff619f356b7'),
+  patientName: 'Kiran',
+  doctor: 'Dr. Kumar',
+  department: 'Neurology',
+  age: 40,
+  treatmentCost: 25000,
+  daysAdmitted: 6
+}
+{
+  _id: ObjectId('6a12de6dffe9eff619f356b9'),
+  patientName: 'Vijay',
+  doctor: 'Dr. Ravi',
+  department: 'Cardiology',
+  age: 55,
+  treatmentCost: 22000,
+  daysAdmitted: 4
+}
+{
+  _id: ObjectId('6a12de6dffe9eff619f356b3'),
+  patientName: 'Arun',
+  doctor: 'Dr. Ravi',
+  department: 'Cardiology',
+  age: 45,
+  treatmentCost: 20000,
+  daysAdmitted: 5
+}
+{
+  _id: ObjectId('6a12de6dffe9eff619f356bc'),
+  patientName: 'Riya',
+  doctor: 'Dr. Ravi',
+  department: 'Cardiology',
+  age: 29,
+  treatmentCost: 18000,
+  daysAdmitted: 4
+}
+{
+  _id: ObjectId('6a12de6dffe9eff619f356b5'),
+  patientName: 'Raj',
+  doctor: 'Dr. Ravi',
+  department: 'Cardiology',
+  age: 60,
+  treatmentCost: 15000,
+  daysAdmitted: 3
+}
+{
+  _id: ObjectId('6a12de6dffe9eff619f356bb'),
+  patientName: 'Anil',
+  doctor: 'Dr. Mehta',
+  department: 'Orthopedics',
+  age: 52,
+  treatmentCost: 12000,
+  daysAdmitted: 3
+}
+{
+  _id: ObjectId('6a12de6dffe9eff619f356b6'),
+  patientName: 'Divya',
+  doctor: 'Dr. Mehta',
+  department: 'Orthopedics',
+  age: 35,
+  treatmentCost: 10000,
+  daysAdmitted: 2
+}
+{
+  _id: ObjectId('6a12de6dffe9eff619f356b8'),
+  patientName: 'Sneha',
+  doctor: 'Dr. Mehta',
+  department: 'Orthopedics',
+  age: 30,
+  treatmentCost: 8000,
+  daysAdmitted: 2
+}
+
+
+db.patients.aggregate([{$limit:5}])
+{
+  _id: ObjectId('6a12de6dffe9eff619f356b3'),
+  patientName: 'Arun',
+  doctor: 'Dr. Ravi',
+  department: 'Cardiology',
+  age: 45,
+  treatmentCost: 20000,
+  daysAdmitted: 5
+}
+{
+  _id: ObjectId('6a12de6dffe9eff619f356b4'),
+  patientName: 'Meena',
+  doctor: 'Dr. Kumar',
+  department: 'Neurology',
+  age: 50,
+  treatmentCost: 30000,
+  daysAdmitted: 7
+}
+{
+  _id: ObjectId('6a12de6dffe9eff619f356b5'),
+  patientName: 'Raj',
+  doctor: 'Dr. Ravi',
+  department: 'Cardiology',
+  age: 60,
+  treatmentCost: 15000,
+  daysAdmitted: 3
+}
+{
+  _id: ObjectId('6a12de6dffe9eff619f356b6'),
+  patientName: 'Divya',
+  doctor: 'Dr. Mehta',
+  department: 'Orthopedics',
+  age: 35,
+  treatmentCost: 10000,
+  daysAdmitted: 2
+}
+{
+  _id: ObjectId('6a12de6dffe9eff619f356b7'),
+  patientName: 'Kiran',
+  doctor: 'Dr. Kumar',
+  department: 'Neurology',
+  age: 40,
+  treatmentCost: 25000,
+  daysAdmitted: 6
+}
+
+
+db.patients.aggregate([{$skip:3}])
+{
+  _id: ObjectId('6a12de6dffe9eff619f356b6'),
+  patientName: 'Divya',
+  doctor: 'Dr. Mehta',
+  department: 'Orthopedics',
+  age: 35,
+  treatmentCost: 10000,
+  daysAdmitted: 2
+}
+{
+  _id: ObjectId('6a12de6dffe9eff619f356b7'),
+  patientName: 'Kiran',
+  doctor: 'Dr. Kumar',
+  department: 'Neurology',
+  age: 40,
+  treatmentCost: 25000,
+  daysAdmitted: 6
+}
+{
+  _id: ObjectId('6a12de6dffe9eff619f356b8'),
+  patientName: 'Sneha',
+  doctor: 'Dr. Mehta',
+  department: 'Orthopedics',
+  age: 30,
+  treatmentCost: 8000,
+  daysAdmitted: 2
+}
+{
+  _id: ObjectId('6a12de6dffe9eff619f356b9'),
+  patientName: 'Vijay',
+  doctor: 'Dr. Ravi',
+  department: 'Cardiology',
+  age: 55,
+  treatmentCost: 22000,
+  daysAdmitted: 4
+}
+{
+  _id: ObjectId('6a12de6dffe9eff619f356ba'),
+  patientName: 'Priya',
+  doctor: 'Dr. Kumar',
+  department: 'Neurology',
+  age: 48,
+  treatmentCost: 27000,
+  daysAdmitted: 5
+}
+{
+  _id: ObjectId('6a12de6dffe9eff619f356bb'),
+  patientName: 'Anil',
+  doctor: 'Dr. Mehta',
+  department: 'Orthopedics',
+  age: 52,
+  treatmentCost: 12000,
+  daysAdmitted: 3
+}
+{
+  _id: ObjectId('6a12de6dffe9eff619f356bc'),
+  patientName: 'Riya',
+  doctor: 'Dr. Ravi',
+  department: 'Cardiology',
+  age: 29,
+  treatmentCost: 18000,
+  daysAdmitted: 4
+}
+
+
+db.patients.aggregate([{$match:{department:"Cardiology"}},{$project:{patientName:1,_id:0}}])
+{
+  patientName: 'Arun'
+}
+{
+  patientName: 'Raj'
+}
+{
+  patientName: 'Vijay'
+}
+{
+  patientName: 'Riya'
+}
+
+
+db.patients.aggregate([{$group:{_id:"$department",totalCost:{$sum:"$treatmentCost"}}}])
+{
+  _id: 'Orthopedics',
+  totalCost: 30000
+}
+{
+  _id: 'Cardiology',
+  totalCost: 75000
+}
+{
+  _id: 'Neurology',
+  totalCost: 82000
+}
+
+
+db.patients.aggregate([{$group:{_id:"$doctor",avgCost:{$avg:"$treatmentCost"}}},{$sort:{avgCost:1}}])
+{
+  _id: 'Dr. Mehta',
+  avgCost: 10000
+}
+{
+  _id: 'Dr. Ravi',
+  avgCost: 18750
+}
+{
+  _id: 'Dr. Kumar',
+  avgCost: 27333.333333333332
+}
+
+
+db.patients.aggregate([{$group:{_id:"$department",totalCost:{$sum:"$treatmentCost"}}},{$match:{totalCost:{$gt:50000}}}])
+{
+  _id: 'Cardiology',
+  totalCost: 75000
+}
+{
+  _id: 'Neurology',
+  totalCost: 82000
+}
+
+
+db.patients.aggregate([{$group:{_id:"$department",count:{$sum:1}}},{$sort:{count:-1}}])
+{
+  _id: 'Cardiology',
+  count: 4
+}
+{
+  _id: 'Neurology',
+  count: 3
+}
+{
+  _id: 'Orthopedics',
+  count: 3
+}
+
+
+db.patients.aggregate([{$group:{_id:"$doctor",totalCost:{$sum:"$treatmentCost"}}},{$sort:{totalCost:-1}},{$limit:3}])
+{
+  _id: 'Dr. Kumar',
+  totalCost: 82000
+}
+{
+  _id: 'Dr. Ravi',
+  totalCost: 75000
+}
+{
+  _id: 'Dr. Mehta',
+  totalCost: 30000
+}
+
+
+db.patients.aggregate([{$match:{age:{$gt:40}}},{$group:{_id:"$department",count:{$sum:1}}}])
+{
+  _id: 'Orthopedics',
+  count: 1
+}
+{
+  _id: 'Cardiology',
+  count: 3
+}
+{
+  _id: 'Neurology',
+  count: 2
+}
+
+
+db.patients.aggregate([{$group:{_id:"$department",avgCost:{$avg:"$treatmentCost"}}},{$project:{department:"$_id",avgCost:1,_id:0}},{$sort:{avgCost:-1}}])
+{
+  avgCost: 27333.333333333332,
+  department: 'Neurology'
+}
+{
+  avgCost: 18750,
+  department: 'Cardiology'
+}
+{
+  avgCost: 10000,
+  department: 'Orthopedics'
+}
+
+
+db.patients.aggregate([{$group:{_id:"$department",count:{$sum:1}}},{$match:{count:{$gt:2}}}])
+{
+  _id: 'Neurology',
+  count: 3
+}
+{
+  _id: 'Cardiology',
+  count: 4
+}
+{
+  _id: 'Orthopedics',
+  count: 3
+}
+
+
+db.patients.aggregate([{$group:{_id:"$department",totalCost:{$sum:"$treatmentCost"}}},{$sort:{totalCost:-1}},{$skip:1},{$limit:3}])
+{
+  _id: 'Cardiology',
+  totalCost: 75000
+}
+{
+  _id: 'Orthopedics',
+  totalCost: 30000
+}
+
+
+db.patients.aggregate([{$match:{treatmentCost:{$gt:10000}}},{$group:{_id:"$doctor",totalCost:{$sum:"$treatmentCost"}}},{$sort:{totalCost:-1}},{$limit:2}])
+{
+  _id: 'Dr. Kumar',
+  totalCost: 82000
+}
+{
+  _id: 'Dr. Ravi',
+  totalCost: 75000
+}
