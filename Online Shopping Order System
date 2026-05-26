@@ -1,0 +1,171 @@
+db.createCollection("orders")
+
+db.orders.insertMany([
+{
+customer_id: "C101",
+name: "Asha",
+items: [
+{ product: "Mobile", price: 15000 },
+{ product: "Earphones", price: 2000 }
+]
+},
+{
+customer_id: "C102",
+name: "Kiran",
+items: [
+{ product: "Mobile", price: 15000 },
+{ product: "Laptop", price: 50000 }
+]
+},
+{
+customer_id: "C103",
+name: "Neha",
+items: [
+{ product: "Earphones", price: 2000 },
+{ product: "Laptop", price: 50000 }
+]
+}
+])
+
+SCENARIO 1: Mobile Product Revenue Report
+
+db.orders.aggregate([
+{ $unwind: "$items" },
+{
+$match: {
+"items.product": "Mobile",
+"items.price": { $gte: 15000 }
+}},
+{
+$group: {
+_id: "$items.product",
+total_customers: { $sum: 1 },
+total_revenue: { $sum: "$items.price" },
+average_price: { $avg: "$items.price" },
+minimum_price: { $min: "$items.price" },
+maximum_price: { $max: "$items.price" },
+customer_names: { $push: "$name" },
+first_customer: { $first: "$name" }
+}},
+{
+$out: "mobile_report"
+}])
+
+db.mobile_report.find().pretty()
+{
+  _id: 'Mobile',
+  total_customers: 2,
+  total_revenue: 30000,
+  average_price: 15000,
+  minimum_price: 15000,
+  maximum_price: 15000,
+  customer_names: [
+    'Asha',
+    'Kiran'
+  ],
+  first_customer: 'Asha'
+}
+
+SCENARIO 2: High Value Products Report
+
+db.orders.aggregate([
+{ $unwind: "$items" },
+{
+$match: {
+"items.price": { $gte: 15000 },
+"items.product": { $in: ["Mobile", "Laptop"] }
+}},
+{
+$group: {
+_id: "$items.product",
+number_of_orders: { $sum: 1 },
+total_revenue: { $sum: "$items.price" },
+average_price: { $avg: "$items.price" },
+minimum_price: { $min: "$items.price" },
+maximum_price: { $max: "$items.price" },
+customer_list: { $push: "$name" }
+}},
+{
+$out: "high_value_products_report"
+}])
+
+db.high_value_products_report.find().pretty()
+{
+  _id: 'Mobile',
+  number_of_orders: 2,
+  total_revenue: 30000,
+  average_price: 15000,
+  minimum_price: 15000,
+  maximum_price: 15000,
+  customer_list: [
+    'Asha',
+    'Kiran'
+  ]
+}
+{
+  _id: 'Laptop',
+  number_of_orders: 2,
+  total_revenue: 100000,
+  average_price: 50000,
+  minimum_price: 50000,
+  maximum_price: 50000,
+  customer_list: [
+    'Kiran',
+    'Neha'
+  ]
+}
+
+SCENARIO 3: Customer-wise Spending Report
+
+db.orders.aggregate([
+{
+$project: {
+name: 1,
+items: 1,
+total_products: { $size: "$items" }
+}},
+{
+$match: {
+total_products: { $gt: 1 }
+}},
+{ $unwind: "$items" },
+{
+$group: {
+_id: "$name",
+total_amount_spent: { $sum: "$items.price" },
+average_price: { $avg: "$items.price" },
+minimum_price: { $min: "$items.price" },
+maximum_price: { $max: "$items.price" },
+products_purchased: { $push: "$items.product" }
+}},
+{
+$match: {
+total_amount_spent: { $gte: 30000 }
+}},
+{
+$out: "customer_spending_report"
+}])
+
+db.customer_spending_report.find().pretty()
+{
+  _id: 'Kiran',
+  total_amount_spent: 65000,
+  average_price: 32500,
+  minimum_price: 15000,
+  maximum_price: 50000,
+  products_purchased: [
+    'Mobile',
+    'Laptop'
+  ]
+}
+{
+  _id: 'Neha',
+  total_amount_spent: 52000,
+  average_price: 26000,
+  minimum_price: 2000,
+  maximum_price: 50000,
+  products_purchased: [
+    'Earphones',
+    'Laptop'
+  ]
+}
