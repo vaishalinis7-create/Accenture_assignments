@@ -1,0 +1,1057 @@
+use libraryDB
+already on db libraryDB
+db.Books.insertMany([
+{
+id:1,
+Title:"Data Structure",
+Author:"Lipschute",
+Subject:"DS",
+Publisher:"McGraw",
+Edition:"First Edition",
+Quantity:4,
+Price:217
+},
+
+{
+id:2,
+Title:"DOS Guide",
+Author:"NORTRON",
+Subject:"OS",
+Publisher:"PHI",
+Edition:"First Edition",
+Quantity:3,
+Price:175
+},
+
+{
+id:3,
+Title:"Turbo C++",
+Author:"Robert Lafore",
+Subject:"Prog",
+Publisher:"Galgotia",
+Edition:"Second Edition",
+Quantity:5,
+Price:270
+},
+
+{
+id:4,
+Title:"Dbase Dummies",
+Author:"Palmer",
+Subject:"DBMS",
+Publisher:"PustakM",
+Edition:"First Edition",
+Quantity:7,
+Price:130
+},
+
+{
+id:5,
+Title:"Mastering Windows",
+Author:"Cowart",
+Subject:"OS",
+Publisher:"BPB",
+Edition:"Third Edition",
+Quantity:1,
+Price:225
+},
+
+{
+id:6,
+Title:"Computer Studies",
+Author:"French",
+Subject:"FND",
+Publisher:"Galgotia",
+Edition:"Second Edition",
+Quantity:2,
+Price:75
+},
+
+{
+id:7,
+Title:"COBOL",
+Author:"Stern",
+Subject:"Prog",
+Publisher:"John W",
+Edition:"Third Edition",
+Quantity:4,
+Price:1000
+},
+
+{
+id:8,
+Title:"Guide Network",
+Author:"Freed",
+Subject:"NET",
+Publisher:"Zpress",
+Edition:"Second Edition",
+Quantity:3,
+Price:200
+},
+
+{
+id:9,
+Title:"Basic for Beginners",
+Author:"Norton",
+Subject:"Prog",
+Publisher:"BPB",
+Edition:"First Edition",
+Quantity:3,
+Price:40
+},
+
+{
+id:10,
+Title:"Advanced Pascal",
+Author:"Schildt",
+Subject:"Prog",
+Publisher:"MCGraw",
+Edition:"Third Edition",
+Quantity:4,
+Price:350
+}
+])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('6a1545abb77adda4ea7ad85e'),
+    '1': ObjectId('6a1545abb77adda4ea7ad85f'),
+    '2': ObjectId('6a1545abb77adda4ea7ad860'),
+    '3': ObjectId('6a1545abb77adda4ea7ad861'),
+    '4': ObjectId('6a1545abb77adda4ea7ad862'),
+    '5': ObjectId('6a1545abb77adda4ea7ad863'),
+    '6': ObjectId('6a1545abb77adda4ea7ad864'),
+    '7': ObjectId('6a1545abb77adda4ea7ad865'),
+    '8': ObjectId('6a1545abb77adda4ea7ad866'),
+    '9': ObjectId('6a1545abb77adda4ea7ad867')
+  }
+}
+
+db.Purchase.insertMany([
+{
+order_no:70001,
+Book_id:3,
+item_quantity:3,
+purchase_amt:810,
+date:"2022-11-05",
+customer_id:3005,
+salesman_id:5002
+},
+
+{
+order_no:70009,
+Book_id:4,
+item_quantity:4,
+purchase_amt:520,
+date:"2022-11-10",
+customer_id:3001,
+salesman_id:5005
+},
+
+{
+order_no:70002,
+Book_id:5,
+item_quantity:1,
+purchase_amt:225,
+date:"2022-11-09",
+customer_id:3002,
+salesman_id:5001
+},
+
+{
+order_no:70004,
+Book_id:6,
+item_quantity:2,
+purchase_amt:150,
+date:"2022-11-08",
+customer_id:3009,
+salesman_id:5003
+},
+
+{
+order_no:70007,
+Book_id:1,
+item_quantity:2,
+purchase_amt:434,
+date:"2022-11-08",
+customer_id:3005,
+salesman_id:5002
+},
+
+{
+order_no:70008,
+Book_id:8,
+item_quantity:1,
+purchase_amt:200,
+date:"2022-11-01",
+customer_id:3007,
+salesman_id:5001
+},
+
+{
+order_no:70010,
+Book_id:7,
+item_quantity:2,
+purchase_amt:2000,
+date:"2022-11-03",
+customer_id:3004,
+salesman_id:5006
+},
+
+{
+order_no:70003,
+Book_id:10,
+item_quantity:2,
+purchase_amt:700,
+date:"2022-11-04",
+customer_id:3009,
+salesman_id:5003
+},
+
+{
+order_no:70012,
+Book_id:9,
+item_quantity:2,
+purchase_amt:80,
+date:"2022-11-02",
+customer_id:3008,
+salesman_id:5002
+},
+
+{
+order_no:70011,
+Book_id:2,
+item_quantity:2,
+purchase_amt:350,
+date:"2022-11-07",
+customer_id:3003,
+salesman_id:5007
+},
+
+{
+order_no:70013,
+Book_id:7,
+item_quantity:2,
+purchase_amt:2000,
+date:"2022-11-06",
+customer_id:3002,
+salesman_id:5001
+}
+])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('6a1545b7b77adda4ea7ad868'),
+    '1': ObjectId('6a1545b7b77adda4ea7ad869'),
+    '2': ObjectId('6a1545b7b77adda4ea7ad86a'),
+    '3': ObjectId('6a1545b7b77adda4ea7ad86b'),
+    '4': ObjectId('6a1545b7b77adda4ea7ad86c'),
+    '5': ObjectId('6a1545b7b77adda4ea7ad86d'),
+    '6': ObjectId('6a1545b7b77adda4ea7ad86e'),
+    '7': ObjectId('6a1545b7b77adda4ea7ad86f'),
+    '8': ObjectId('6a1545b7b77adda4ea7ad870'),
+    '9': ObjectId('6a1545b7b77adda4ea7ad871'),
+    '10': ObjectId('6a1545b7b77adda4ea7ad872')
+  }
+}
+
+db.Customer.insertMany([
+{
+id:3001,
+FirstName:"Ben",
+LastName:"Miller",
+Street:"101,Candy Rd",
+City:"Redmond",
+State:"WA",
+Phone:"9845367123",
+Email:"ben@gmail.com"
+},
+
+{
+id:3002,
+FirstName:"Garrett",
+LastName:"Vargas",
+Street:"102, Acorn Avenue",
+City:"Calgary",
+State:"AB",
+Phone:"9789011111",
+Email:"garrett@gmail.com"
+},
+
+{
+id:3003,
+FirstName:"Gabe",
+LastName:"Mares",
+Street:"1061, Buskrit Avenue",
+City:"Edmonds",
+State:"WA",
+Phone:"9944433222",
+Email:"gabe@gmail.com"
+},
+
+{
+id:3004,
+FirstName:"Reuben",
+LastName:"Dsa",
+Street:"1064, Slow Creek Road",
+City:"Seattle",
+State:"WA",
+Phone:"9988844555",
+Email:"reuben@gmail.com"
+},
+
+{
+id:3005,
+FirstName:"Gordon",
+LastName:"Hee",
+Street:"108, LakeSide Court",
+City:"Bellevue",
+State:"WA",
+Phone:"8855577234",
+Email:"gordon@gmail.com"
+},
+
+{
+id:3006,
+FirstName:"Karan",
+LastName:"Khanna",
+Street:"1102, Ravenwood",
+City:"Seattle",
+State:"WA",
+Phone:"7788966445",
+Email:"karan@gmail.com"
+},
+
+{
+id:3007,
+FirstName:"Francois",
+LastName:"Ajenstat",
+Street:"1144, Paradise Ct",
+City:"Issaquah",
+State:"WA",
+Phone:"7889900123",
+Email:"francois@gmail.com"
+},
+
+{
+id:3008,
+FirstName:"Sariya",
+LastName:"Hampa",
+Street:"1185, Dallas Drive",
+City:"Everett",
+State:"WA",
+Phone:"9667785544",
+Email:"sariya@gmail.com"
+},
+
+{
+id:3009,
+FirstName:"Krik",
+LastName:"Koenigs",
+Street:"1220, Bradford Way",
+City:"Seattle",
+State:"WA",
+Phone:"9774455443",
+Email:"krik@gmail.com"
+},
+
+{
+id:3010,
+FirstName:"Kim",
+LastName:"Ralls",
+Street:"1226, Shoe St",
+City:"Bothell",
+State:"WA",
+Phone:"8770033221",
+Email:"kim@gmail.com"
+}
+])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('6a1545f2b77adda4ea7ad873'),
+    '1': ObjectId('6a1545f2b77adda4ea7ad874'),
+    '2': ObjectId('6a1545f2b77adda4ea7ad875'),
+    '3': ObjectId('6a1545f2b77adda4ea7ad876'),
+    '4': ObjectId('6a1545f2b77adda4ea7ad877'),
+    '5': ObjectId('6a1545f2b77adda4ea7ad878'),
+    '6': ObjectId('6a1545f2b77adda4ea7ad879'),
+    '7': ObjectId('6a1545f2b77adda4ea7ad87a'),
+    '8': ObjectId('6a1545f2b77adda4ea7ad87b'),
+    '9': ObjectId('6a1545f2b77adda4ea7ad87c')
+  }
+}
+
+db.Salesman.insertMany([
+{
+id:5001,
+Name:"James Hoog",
+City:"New York",
+Commission:0.15
+},
+
+{
+id:5002,
+Name:"Nail Knite",
+City:"Paris",
+Commission:0.13
+},
+
+{
+id:5003,
+Name:"Lauson Hen",
+City:"Germany",
+Commission:0.12
+},
+
+{
+id:5005,
+Name:"Pit Alex",
+City:"London",
+Commission:0.11
+},
+
+{
+id:5006,
+Name:"Mc Lyon",
+City:"Paris",
+Commission:0.14
+},
+
+{
+id:5007,
+Name:"Paul Adam",
+City:"Rome",
+Commission:0.13
+}
+])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('6a154608b77adda4ea7ad87d'),
+    '1': ObjectId('6a154608b77adda4ea7ad87e'),
+    '2': ObjectId('6a154608b77adda4ea7ad87f'),
+    '3': ObjectId('6a154608b77adda4ea7ad880'),
+    '4': ObjectId('6a154608b77adda4ea7ad881'),
+    '5': ObjectId('6a154608b77adda4ea7ad882')
+  }
+}
+
+EVALUATION - 1
+
+1. db.Books.find()
+{
+  _id: ObjectId('6a1545abb77adda4ea7ad85e'),
+  id: 1,
+  Title: 'Data Structure',
+  Author: 'Lipschute',
+  Subject: 'DS',
+  Publisher: 'McGraw',
+  Edition: 'First Edition',
+  Quantity: 4,
+  Price: 217
+}
+{
+  _id: ObjectId('6a1545abb77adda4ea7ad85f'),
+  id: 2,
+  Title: 'DOS Guide',
+  Author: 'NORTRON',
+  Subject: 'OS',
+  Publisher: 'PHI',
+  Edition: 'First Edition',
+  Quantity: 3,
+  Price: 175
+}
+{
+  _id: ObjectId('6a1545abb77adda4ea7ad860'),
+  id: 3,
+  Title: 'Turbo C++',
+  Author: 'Robert Lafore',
+  Subject: 'Prog',
+  Publisher: 'Galgotia',
+  Edition: 'Second Edition',
+  Quantity: 5,
+  Price: 270
+}
+{
+  _id: ObjectId('6a1545abb77adda4ea7ad861'),
+  id: 4,
+  Title: 'Dbase Dummies',
+  Author: 'Palmer',
+  Subject: 'DBMS',
+  Publisher: 'PustakM',
+  Edition: 'First Edition',
+  Quantity: 7,
+  Price: 130
+}
+{
+  _id: ObjectId('6a1545abb77adda4ea7ad862'),
+  id: 5,
+  Title: 'Mastering Windows',
+  Author: 'Cowart',
+  Subject: 'OS',
+  Publisher: 'BPB',
+  Edition: 'Third Edition',
+  Quantity: 1,
+  Price: 225
+}
+{
+  _id: ObjectId('6a1545abb77adda4ea7ad863'),
+  id: 6,
+  Title: 'Computer Studies',
+  Author: 'French',
+  Subject: 'FND',
+  Publisher: 'Galgotia',
+  Edition: 'Second Edition',
+  Quantity: 2,
+  Price: 75
+}
+{
+  _id: ObjectId('6a1545abb77adda4ea7ad864'),
+  id: 7,
+  Title: 'COBOL',
+  Author: 'Stern',
+  Subject: 'Prog',
+  Publisher: 'John W',
+  Edition: 'Third Edition',
+  Quantity: 4,
+  Price: 1000
+}
+{
+  _id: ObjectId('6a1545abb77adda4ea7ad865'),
+  id: 8,
+  Title: 'Guide Network',
+  Author: 'Freed',
+  Subject: 'NET',
+  Publisher: 'Zpress',
+  Edition: 'Second Edition',
+  Quantity: 3,
+  Price: 200
+}
+{
+  _id: ObjectId('6a1545abb77adda4ea7ad866'),
+  id: 9,
+  Title: 'Basic for Beginners',
+  Author: 'Norton',
+  Subject: 'Prog',
+  Publisher: 'BPB',
+  Edition: 'First Edition',
+  Quantity: 3,
+  Price: 40
+}
+{
+  _id: ObjectId('6a1545abb77adda4ea7ad867'),
+  id: 10,
+  Title: 'Advanced Pascal',
+  Author: 'Schildt',
+  Subject: 'Prog',
+  Publisher: 'MCGraw',
+  Edition: 'Third Edition',
+  Quantity: 4,
+  Price: 350
+}
+2. db.Purchase.find()
+{
+  _id: ObjectId('6a1545b7b77adda4ea7ad868'),
+  order_no: 70001,
+  Book_id: 3,
+  item_quantity: 3,
+  purchase_amt: 810,
+  date: '2022-11-05',
+  customer_id: 3005,
+  salesman_id: 5002
+}
+{
+  _id: ObjectId('6a1545b7b77adda4ea7ad869'),
+  order_no: 70009,
+  Book_id: 4,
+  item_quantity: 4,
+  purchase_amt: 520,
+  date: '2022-11-10',
+  customer_id: 3001,
+  salesman_id: 5005
+}
+{
+  _id: ObjectId('6a1545b7b77adda4ea7ad86a'),
+  order_no: 70002,
+  Book_id: 5,
+  item_quantity: 1,
+  purchase_amt: 225,
+  date: '2022-11-09',
+  customer_id: 3002,
+  salesman_id: 5001
+}
+{
+  _id: ObjectId('6a1545b7b77adda4ea7ad86b'),
+  order_no: 70004,
+  Book_id: 6,
+  item_quantity: 2,
+  purchase_amt: 150,
+  date: '2022-11-08',
+  customer_id: 3009,
+  salesman_id: 5003
+}
+{
+  _id: ObjectId('6a1545b7b77adda4ea7ad86c'),
+  order_no: 70007,
+  Book_id: 1,
+  item_quantity: 2,
+  purchase_amt: 434,
+  date: '2022-11-08',
+  customer_id: 3005,
+  salesman_id: 5002
+}
+{
+  _id: ObjectId('6a1545b7b77adda4ea7ad86d'),
+  order_no: 70008,
+  Book_id: 8,
+  item_quantity: 1,
+  purchase_amt: 200,
+  date: '2022-11-01',
+  customer_id: 3007,
+  salesman_id: 5001
+}
+{
+  _id: ObjectId('6a1545b7b77adda4ea7ad86e'),
+  order_no: 70010,
+  Book_id: 7,
+  item_quantity: 2,
+  purchase_amt: 2000,
+  date: '2022-11-03',
+  customer_id: 3004,
+  salesman_id: 5006
+}
+{
+  _id: ObjectId('6a1545b7b77adda4ea7ad86f'),
+  order_no: 70003,
+  Book_id: 10,
+  item_quantity: 2,
+  purchase_amt: 700,
+  date: '2022-11-04',
+  customer_id: 3009,
+  salesman_id: 5003
+}
+{
+  _id: ObjectId('6a1545b7b77adda4ea7ad870'),
+  order_no: 70012,
+  Book_id: 9,
+  item_quantity: 2,
+  purchase_amt: 80,
+  date: '2022-11-02',
+  customer_id: 3008,
+  salesman_id: 5002
+}
+{
+  _id: ObjectId('6a1545b7b77adda4ea7ad871'),
+  order_no: 70011,
+  Book_id: 2,
+  item_quantity: 2,
+  purchase_amt: 350,
+  date: '2022-11-07',
+  customer_id: 3003,
+  salesman_id: 5007
+}
+{
+  _id: ObjectId('6a1545b7b77adda4ea7ad872'),
+  order_no: 70013,
+  Book_id: 7,
+  item_quantity: 2,
+  purchase_amt: 2000,
+  date: '2022-11-06',
+  customer_id: 3002,
+  salesman_id: 5001
+}
+3. db.Books.createIndex({Title:"text"})
+db.Books.find({
+  $text:{$search:"COBOL"}
+})
+{
+  _id: ObjectId('6a1545abb77adda4ea7ad864'),
+  id: 7,
+  Title: 'COBOL',
+  Author: 'Stern',
+  Subject: 'Prog',
+  Publisher: 'John W',
+  Edition: 'Third Edition',
+  Quantity: 4,
+  Price: 1000
+}
+db.Books.createIndex({Title:"text"})
+db.Books.find({
+  $text:{$search:"Turbo C++"}
+})
+{
+  _id: ObjectId('6a1545abb77adda4ea7ad860'),
+  id: 3,
+  Title: 'Turbo C++',
+  Author: 'Robert Lafore',
+  Subject: 'Prog',
+  Publisher: 'Galgotia',
+  Edition: 'Second Edition',
+  Quantity: 5,
+  Price: 270
+}
+4. db.Books.aggregate([
+  {
+    $group:{
+      _id:"$Title",
+      total_price:{$sum:"$price"}
+    }
+  },
+  {
+    $sort:{_id:1}
+  }
+])
+{
+  _id: 'Advanced Pascal',
+  total_price: 0
+}
+{
+  _id: 'Basic for Beginners',
+  total_price: 0
+}
+{
+  _id: 'COBOL',
+  total_price: 0
+}
+{
+  _id: 'Computer Studies',
+  total_price: 0
+}
+{
+  _id: 'DOS Guide',
+  total_price: 0
+}
+{
+  _id: 'Data Structure',
+  total_price: 0
+}
+{
+  _id: 'Dbase Dummies',
+  total_price: 0
+}
+{
+  _id: 'Guide Network',
+  total_price: 0
+}
+{
+  _id: 'Mastering Windows',
+  total_price: 0
+}
+{
+  _id: 'Turbo C++',
+  total_price: 0
+}
+5. db.Books.aggregate([
+  {
+    $group:{
+      _id:"$Title",
+      total_price:{$sum:"$Price"}
+    }
+  },
+  {
+    $sort:{_id:1}
+  }
+])
+{
+  _id: 'Advanced Pascal',
+  total_price: 350
+}
+{
+  _id: 'Basic for Beginners',
+  total_price: 40
+}
+{
+  _id: 'COBOL',
+  total_price: 1000
+}
+{
+  _id: 'Computer Studies',
+  total_price: 75
+}
+{
+  _id: 'DOS Guide',
+  total_price: 175
+}
+{
+  _id: 'Data Structure',
+  total_price: 217
+}
+{
+  _id: 'Dbase Dummies',
+  total_price: 130
+}
+{
+  _id: 'Guide Network',
+  total_price: 200
+}
+{
+  _id: 'Mastering Windows',
+  total_price: 225
+}
+{
+  _id: 'Turbo C++',
+  total_price: 270
+}
+
+6. db.Purchase.aggregate([
+{
+$group:{
+_id:"$Book_id",
+count:{ $sum:1 }
+}
+},
+{
+$match:{
+count:{ $gt:1 }
+}
+}
+])
+{
+  _id: 7,
+  count: 2
+}
+7. db.Books.aggregate([
+{
+$group:{
+_id:"$Edition",
+totalPrice:{ $sum:"$Price" }
+}
+}
+])
+{
+  _id: 'Third Edition',
+  totalPrice: 1575
+}
+{
+  _id: 'First Edition',
+  totalPrice: 562
+}
+{
+  _id: 'Second Edition',
+  totalPrice: 545
+}
+8. db.Books.aggregate([
+{
+$project:{
+_id:"$Title",
+totalAmount:{
+$multiply:["$Quantity","$Price"]
+}
+}
+},
+{
+$sort:{ totalAmount:1 }
+}
+])
+{
+  _id: 'Basic for Beginners',
+  totalAmount: 120
+}
+{
+  _id: 'Computer Studies',
+  totalAmount: 150
+}
+{
+  _id: 'Mastering Windows',
+  totalAmount: 225
+}
+{
+  _id: 'DOS Guide',
+  totalAmount: 525
+}
+{
+  _id: 'Guide Network',
+  totalAmount: 600
+}
+{
+  _id: 'Data Structure',
+  totalAmount: 868
+}
+{
+  _id: 'Dbase Dummies',
+  totalAmount: 910
+}
+{
+  _id: 'Turbo C++',
+  totalAmount: 1350
+}
+{
+  _id: 'Advanced Pascal',
+  totalAmount: 1400
+}
+{
+  _id: 'COBOL',
+  totalAmount: 4000
+}
+
+9. db.Purchase.aggregate([
+{
+$group:{
+_id:null,
+averagePurchase:{
+$avg:"$purchase_amt"
+}
+}
+}
+])
+{
+  _id: null,
+  averagePurchase: 679
+}
+
+10. db.Books.aggregate([
+{
+$project:{
+_id:"$Title",
+totalAmount:{
+$multiply:["$Quantity","$Price"]
+}
+}
+},
+{
+$match:{
+totalAmount:{ $gte:1000 }
+}
+},
+{
+$sort:{
+totalAmount:-1
+}
+}
+])
+{
+  _id: 'COBOL',
+  totalAmount: 4000
+}
+{
+  _id: 'Advanced Pascal',
+  totalAmount: 1400
+}
+{
+  _id: 'Turbo C++',
+  totalAmount: 1350
+}
+
+11. let oldBook = "COBOL"
+let newBook = "COBOL_new"
+db.Books.updateOne(
+  {
+    Title:oldBook
+  },
+  {
+    $set:{Title:newBook}
+  }
+)
+db.Books.find({Title:"COBOL_new"})
+{
+  _id: ObjectId('6a1545abb77adda4ea7ad864'),
+  id: 7,
+  Title: 'COBOL_new',
+  Author: 'Stern',
+  Subject: 'Prog',
+  Publisher: 'John W',
+  Edition: 'Third Edition',
+  Quantity: 4,
+  Price: 1000
+}
+
+12. db.Books.createIndex(
+  { id: 1 },
+  { uunique: true}
+)
+id_1
+
+13. db.counters.insertOne({
+_id:"bookid",
+seq:0
+})
+
+function getNextSequence(name){
+var ret = db.counters.findOneAndUpdate(
+{ _id:name },
+{ $inc:{ seq:1 } },
+{ returnDocument:"after" }
+);
+
+return ret.seq;
+}
+
+db.Books.insertOne({
+id:getNextSequence("bookid"),
+Title:"Java",
+Price:500
+})
+{
+  acknowledged: true,
+  insertedId: ObjectId('6a154cfcb77adda4ea7ad883')
+} 
+
+14. db.Purchase.find({
+  purchase_amt:{
+    $mod:[4,0]
+  }
+})
+{
+  _id: ObjectId('6a1545b7b77adda4ea7ad869'),
+  order_no: 70009,
+  Book_id: 4,
+  item_quantity: 4,
+  purchase_amt: 520,
+  date: '2022-11-10',
+  customer_id: 3001,
+  salesman_id: 5005
+}
+{
+  _id: ObjectId('6a1545b7b77adda4ea7ad86d'),
+  order_no: 70008,
+  Book_id: 8,
+  item_quantity: 1,
+  purchase_amt: 200,
+  date: '2022-11-01',
+  customer_id: 3007,
+  salesman_id: 5001
+}
+{
+  _id: ObjectId('6a1545b7b77adda4ea7ad86e'),
+  order_no: 70010,
+  Book_id: 7,
+  item_quantity: 2,
+  purchase_amt: 2000,
+  date: '2022-11-03',
+  customer_id: 3004,
+  salesman_id: 5006
+}
+{
+  _id: ObjectId('6a1545b7b77adda4ea7ad86f'),
+  order_no: 70003,
+  Book_id: 10,
+  item_quantity: 2,
+  purchase_amt: 700,
+  date: '2022-11-04',
+  customer_id: 3009,
+  salesman_id: 5003
+}
+{
+  _id: ObjectId('6a1545b7b77adda4ea7ad870'),
+  order_no: 70012,
+  Book_id: 9,
+  item_quantity: 2,
+  purchase_amt: 80,
+  date: '2022-11-02',
+  customer_id: 3008,
+  salesman_id: 5002
+}
+{
+  _id: ObjectId('6a1545b7b77adda4ea7ad872'),
+  order_no: 70013,
+  Book_id: 7,
+  item_quantity: 2,
+  purchase_amt: 2000,
+  date: '2022-11-06',
+  customer_id: 3002,
+  salesman_id: 5001
+}
+
+
+
