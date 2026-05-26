@@ -1,0 +1,41 @@
+use libraryDB
+
+
+db.books.insertOne({
+  bookId: 1,
+  title: "MongoDB Basics",
+  author: "Tom",
+  price: 450,
+  category: "Database"
+})
+
+db.books.insertMany([
+  { bookId: 2, title: "Java Fundamentals", author: "James", price: 500, category: "Programming" },
+  { bookId: 3, title: "Python Guide", author: "Guido", price: 480, category: "Programming" },
+  { bookId: 4, title: "Data Science 101", author: "Andrew", price: 700, category: "Analytics" },
+  { bookId: 5, title: "Web Development", author: "Mark", price: 550, category: "Web" },
+  { bookId: 6, title: "AI Basics", author: "Alan", price: 800, category: "AI" },
+  { bookId: 7, title: "Cloud Computing", author: "Jeff", price: 650, category: "Cloud" },
+  { bookId: 8, title: "Cyber Security", author: "Kevin", price: 600, category: "Security" },
+  { bookId: 9, title: "Big Data", author: "Hadoop", price: 750, category: "Analytics" },
+  { bookId: 10, title: "SQL Mastery", author: "Oracle", price: 400, category: "Database" }
+])
+
+
+db.books.createIndex({ bookId: 1 }, { unique: true })
+
+db.books.find()
+
+db.books.find({ bookId: 7 })
+
+db.books.find({ category: "Programming" })
+
+db.books.find({ author: "Tom" })
+
+db.books.find({price: {$gte: 500,$lte: 700}})
+
+db.books.find({},{ title: 1, price: 1, _id: 0 })
+
+db.books.drop()
+
+db.dropDatabase()
