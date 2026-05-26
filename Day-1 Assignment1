@@ -1,0 +1,37 @@
+use bankDB
+
+db.customers.insertOne({
+  accNo: 1001,
+  name: "Arun",
+  type: "Savings",
+  balance: 5000,
+  city: "Chennai"
+})
+
+db.customers.insertMany([
+  { accNo: 1002, name: "Meena", type: "Current", balance: 15000, city: "Coimbatore" },
+  { accNo: 1003, name: "Rahul", type: "Savings", balance: 8000, city: "Madurai" },
+  { accNo: 1004, name: "Kiran", type: "Savings", balance: 12000, city: "Trichy" },
+  { accNo: 1005, name: "Priya", type: "Current", balance: 20000, city: "Salem" },
+  { accNo: 1006, name: "Vijay", type: "Savings", balance: 3000, city: "Erode" },
+  { accNo: 1007, name: "Anita", type: "Savings", balance: 9500, city: "Tirunelveli" },
+  { accNo: 1008, name: "Suresh", type: "Current", balance: 25000, city: "Vellore" },
+  { accNo: 1009, name: "Divya", type: "Savings", balance: 7000, city: "Thanjavur" },
+  { accNo: 1010, name: "Ramesh", type: "Savings", balance: 11000, city: "Karur" }
+])
+
+db.customers.find()
+
+db.customers.find({ accNo: 1005 })
+
+db.customers.find({ type: "Savings" })
+
+db.customers.find({ balance: { $gt: 10000 } })
+
+db.customers.find({ city: "Chennai" })
+
+db.customers.find({}, { name: 1, balance: 1})
+
+db.customers.drop()
+
+db.dropDatabase()
